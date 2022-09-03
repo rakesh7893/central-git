@@ -1,10 +1,13 @@
 kind: Pod
-apiVersin: v1
-metadata: 
- name: testpod
+apiVersion: v1
+metadata:
+ name: multicontpod
 spec:
   containers:
-    - name: c00
-      image: ubuntu
-      command: ["/bin/bash", "-c", "while true; do echo hello Bhupinder; sleep 5; true"]
-  restartPolicy: Never
+   - name: c00
+     image: ubuntu
+     command: ["bin/bash", "-c", "while true; do echo Hello-Multi-container-pod; sleep 5; true"]
+   - name: c01
+     image: ubuntu
+     command: ["bin/bash", "-c", "while true; do echo Hello-container; sleep 5; true"]
+
